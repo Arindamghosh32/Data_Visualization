@@ -37,21 +37,19 @@
         <aside id="sidebar">
             <div class="sidebar-title">
                 <div class="sidebar-brand">
-                    <span class="material-symbols-outlined">
-                        shopping_cart
-                    </span>
+                    
                 </div>
                 <span class="material-symbols-outlined" onclick="closeSidebar()">
                     close
                 </span>
             </div>
             <ul class="sidebar-list">
-                <li class="sidebar-list-item">
+                <li class="sidebar-list-item" id = "Home">
                     <span class="material-symbols-outlined">
                         dashboard
                     </span>
                     <div class="side-write">
-                        <h1>Sector wise distribution</h1>
+                        <h1>Home</h1>
                     </div>
                 </li>
                 <li class="sidebar-list-item" id="region-link">
@@ -73,7 +71,7 @@
             <div class="main-cards">
                 <div class="card">
                     <div class="card-inner">
-                        <h3>Products</h3>
+                        <h3>Country</h3>
                         <span class="material-symbols-outlined">
                             inventory_2
                         </span>
@@ -82,7 +80,7 @@
                 </div>
                 <div class="card">
                     <div class="card-inner">
-                        <h3>Categories</h3>
+                        <h3>Topics</h3>
                         <span class="material-symbols-outlined">
                             category
                         </span>
@@ -91,7 +89,7 @@
                 </div>
                 <div class="card">
                     <div class="card-inner">
-                        <h3>Customers</h3>
+                        <h3>Region</h3>
                         <span class="material-symbols-outlined">
                             groups
                         </span>
@@ -100,9 +98,9 @@
                 </div>
                 <div class="card">
                     <div class="card-inner">
-                        <h3>Alerts</h3>
+                        <h3>City</h3>
                         <span class="material-symbols-outlined">
-                            notification_important
+                            groups
                         </span>
                     </div>
                     <h1>249</h1>
@@ -217,12 +215,16 @@
         updateCharts(); // Call updateCharts function to update charts with new data
 
 
-        
+
         document.addEventListener('DOMContentLoaded', function() {
             var regionLink = document.getElementById('region-link');
+            var homelink = document.getElementById('Home');
             regionLink.addEventListener('click', function() {
                 window.location.href = "{% url 'region' %}";
             });
+            homelink.addEventListener('click', function(){
+                window.location.href = "{% url 'Home' %}";
+            })
         });
         
     </script>
